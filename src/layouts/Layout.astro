@@ -23,7 +23,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       <button id="theme-btn" class="icon-btn" aria-label="Change theme">🌓</button>
     </header>
     <main><slot /></main>
-    <footer class="site-footer">Made with ❤️ · Every story is written by hand</footer>
+    <footer class="site-footer">
+      <p>Made with ❤️ · Every story is written by hand</p>
+      <p>© {new Date().getFullYear()} Manahil. All rights reserved.</p>
+      <p>✉️ <a href="mailto:manahilsajjad2014@gmail.com">manahilsajjad2014@gmail.com</a></p>
+    </footer>
 
     <script is:inline>
       const themes = ['light', 'sepia', 'dark'];
@@ -51,6 +55,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       .icon-btn { background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: .4rem .8rem; font-size: 1.1rem; cursor: pointer; color: var(--text); }
       main { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 3rem; }
       .site-footer { text-align: center; color: var(--muted); padding: 2rem 1rem; font-size: .9rem; }
+      .site-footer p { margin: .2rem 0; }
+      .site-footer a { color: var(--accent); }
     </style>
   </body>
 </html>
