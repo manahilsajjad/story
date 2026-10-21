@@ -3,7 +3,7 @@ title: "Violets god og dårlig tyveri"
 date: 2026-10-21
 genre: "Comedy"
 emoji: "🤪"
-summary: "Det er en historie om en ung piger der hedder Violet. Hun elsker at stjæle og er meget sjov. Men denne gang gik tyveriet ikke som forvenet."
+summary: "Det er en historie om en ung pige der hedder Violet. Hun elsker at stjæle og er meget sjov. Men denne gang gik tyveriet ikke som forvenet."
 featured: true
 ---
 
