@@ -9,7 +9,7 @@ featured: true
 
 “Stop pigen!” råbte bageren, mens han løb efter mig med en spatel. Jeg så mig tilbage, mens jeg løb væk i fuld fart med en pose croissanter. Bageren blev ved med at råbe:”Stop hende der! Hun har stjålet en pose croissanter!”
 
-Jeg så nogle kasser der var stablet op af hinanden, og væltede dem for at forsinke bageren. Jeg nåede at løbe væk og dreje om et hjørne, Jeg så nogle træer og gemte mig bag dem, men da jeg rejste mig op sad min hætte fast i en gren. Jeg tænkte at det var lidt dumt at jeg havde taget en hoodie på hvis jeg skulle løbe. Men jeg havde ikke planlagt at bageren ville løbe efter mig. Det var meningen at jeg skulle snuppe dem når han ikke kiggede.
+Jeg så nogle kasser der var stablet op af hinanden, og væltede dem for at forsinke bageren. Jeg nåede at løbe væk og dreje om et hjørne. Jeg så nogle træer og gemte mig bag dem, men da jeg rejste mig op sad min hætte fast i en gren. Jeg tænkte at det var lidt dumt at jeg havde taget en hoodie på hvis jeg skulle løbe. Men jeg havde ikke planlagt at bageren ville løbe efter mig. Det var meningen at jeg skulle snuppe dem når han ikke kiggede.
 
 Jeg prøvede at løse mig fri fra grenen, hvilket fik det til at se ud som om jeg dansede. Så så jeg bageren, han stirrede direkte på mig. Men før jeg nåede at sige noget dukkede der to personer frem. Nej hvorfor kommer der to flere problemer? Ikke Karla og Emma! Da de nærmede sig sagde Emma:”Lille Violet prøver at lege tyv." 
 
