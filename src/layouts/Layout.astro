@@ -1,0 +1,56 @@
+---
+const { title = 'My Stories', description = 'Stories to read and enjoy.' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@500;700&display=swap" rel="stylesheet" />
+    <script is:inline>
+      document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.style.setProperty('--read-size', (localStorage.getItem('size') || '20') + 'px');
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href={`${base}/`}>📚 My Stories</a>
+      <button id="theme-btn" class="icon-btn" aria-label="Change theme">🌓</button>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">Made with ❤️ · Every story is written by hand</footer>
+
+    <script is:inline>
+      const themes = ['light', 'sepia', 'dark'];
+      document.getElementById('theme-btn').addEventListener('click', () => {
+        const cur = document.documentElement.dataset.theme;
+        const next = themes[(themes.indexOf(cur) + 1) % themes.length];
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+    </script>
+
+    <style is:global>
+      :root {
+        --bg: #fffaf3; --card: #ffffff; --text: #3a2e2a; --muted: #8a7a72;
+        --accent: #e0678a; --accent-soft: #fde4ec; --border: #f0e2d6;
+        --read-size: 20px;
+      }
+      [data-theme='sepia'] { --bg: #f4ecd8; --card: #fbf5e6; --text: #4a3b28; --muted: #8a7658; --accent: #b5651d; --accent-soft: #ead9b8; --border: #dccba8; }
+      [data-theme='dark'] { --bg: #181a24; --card: #222536; --text: #e8e6f0; --muted: #9a98ad; --accent: #ff8fb1; --accent-soft: #33283a; --border: #2f3247; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Quicksand', system-ui, sans-serif; line-height: 1.6; transition: background .3s, color .3s; }
+      a { color: inherit; }
+      .site-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+      .logo { font-weight: 700; font-size: 1.4rem; text-decoration: none; color: var(--accent); }
+      .icon-btn { background: var(--card); border: 1px solid var(--border); border-radius: 999px; padding: .4rem .8rem; font-size: 1.1rem; cursor: pointer; color: var(--text); }
+      main { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem 3rem; }
+      .site-footer { text-align: center; color: var(--muted); padding: 2rem 1rem; font-size: .9rem; }
+    </style>
+  </body>
+</html>

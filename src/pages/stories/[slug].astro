@@ -1,0 +1,74 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const stories = (await getCollection('stories')).sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+  return stories.map((story, i) => ({
+    params: { slug: story.id },
+    props: { story, prev: stories[i - 1], next: stories[i + 1] },
+  }));
+}
+
+const { story, prev, next } = Astro.props;
+const { Content } = await render(story);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const minutes = Math.max(1, Math.round((story.body ?? '').split(/\s+/).length / 200));
+const date = story.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Layout title={`${story.data.title} · My Stories`} description={story.data.summary}>
+  <div id="progress"></div>
+  <a class="back" href={`${base}/`}>← All stories</a>
+
+  <article>
+    <div class="emoji">{story.data.emoji}</div>
+    <span class="tag">{story.data.genre}</span>
+    <h1>{story.data.title}</h1>
+    <p class="meta">{date} · {minutes} min read</p>
+
+    <div class="size-tools">
+      <button id="smaller" class="icon-btn" aria-label="Smaller text">A−</button>
+      <button id="bigger" class="icon-btn" aria-label="Bigger text">A+</button>
+    </div>
+
+    <div class="story-body"><Content /></div>
+    <p class="the-end">✨ The End ✨</p>
+  </article>
+
+  <nav class="pager">
+    {prev ? <a href={`${base}/stories/${prev.id}/`}>← {prev.data.title}</a> : <span></span>}
+    {next ? <a href={`${base}/stories/${next.id}/`}>{next.data.title} →</a> : <span></span>}
+  </nav>
+
+  <script is:inline>
+    const bar = document.getElementById('progress');
+    addEventListener('scroll', () => {
+      const h = document.documentElement;
+      bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight || 1)) * 100 + '%';
+    });
+    function setSize(n) {
+      n = Math.min(32, Math.max(15, n));
+      document.documentElement.style.setProperty('--read-size', n + 'px');
+      localStorage.setItem('size', n);
+    }
+    const cur = () => parseInt(getComputedStyle(document.documentElement).getPropertyValue('--read-size'));
+    document.getElementById('smaller').onclick = () => setSize(cur() - 2);
+    document.getElementById('bigger').onclick = () => setSize(cur() + 2);
+  </script>
+
+  <style is:global>
+    #progress { position: fixed; top: 0; left: 0; height: 4px; width: 0; background: var(--accent); z-index: 10; }
+    .back { text-decoration: none; color: var(--muted); }
+    article { max-width: 680px; margin: 1.5rem auto; text-align: center; }
+    article .emoji { font-size: 4rem; }
+    article h1 { font-size: 2.4rem; margin: .5rem 0 0; }
+    .meta { color: var(--muted); }
+    .size-tools { display: flex; gap: .5rem; justify-content: center; margin-bottom: 1.5rem; }
+    .story-body { text-align: left; font-family: 'Lora', Georgia, serif; font-size: var(--read-size); line-height: 1.85; }
+    .story-body p { margin: 0 0 1.2em; }
+    .story-body h2 { font-family: 'Quicksand', sans-serif; color: var(--accent); margin-top: 2em; }
+    .the-end { color: var(--accent); font-weight: 700; margin-top: 2.5rem; }
+    .pager { display: flex; justify-content: space-between; gap: 1rem; max-width: 680px; margin: 2rem auto 0; }
+    .pager a { text-decoration: none; background: var(--card); border: 1px solid var(--border); padding: .6rem 1rem; border-radius: 14px; }
+  </style>
+</Layout>
