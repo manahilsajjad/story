@@ -3,7 +3,7 @@ title: "The evil man."
 date: 2026-10-21
 genre: "Horror"
 emoji: "😈"
-summary:Two kis are hiding for there life, but will they escape from the evil man?"
+summary: "Two kis are hiding for there life, but will they escape from the evil man?"
 ---
 
 Inside a dark storageroom to kids named Emil and Karla. They were hiding behind some cardbord-boxes, because there was a scary high man coverd in tattoos who wanted to hurt them. Emil looked at her sister Karla and whispered"What do we do now? The man will find us soon... And its rely dark." "I know and cant see a thing, besides the ark light behind the man." Karla said qiutely.
