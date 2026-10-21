@@ -7,7 +7,7 @@ summary: "Ellias moves to a mysterious town where nothing is normal, hes nightma
 ---
 ## Welcome to town ##
 It was a cold and stormy night when I moved to the small town. I knew immediately that something was wrong with the place. Not just strange wrong.
-There were no children in the streets, no chalk drawings on the pavement—only silence, and the red balloons. They were as red as blood. They hung everywhere: on the lampposts, near the storm drains. I asked my father why there were red balloons. Without looking at me, he said quickly, "It’s clearly just a festive tradition." The way he said it felt wrong; I didn't know why, but there was something off about his voice.
+There were no children in the streets, no chalk drawings on the pavement only silence, and the red balloons. They were as red as blood. They hung everywhere on the lampposts, near the storm drains. I asked my father why there were red balloons. Without looking at me, he said quickly, "It’s clearly just a festive tradition." The way he said it felt wrong; I didn't know why, but there was something off about his voice.
 ## The Warning ##
 Later that evening, I looked out the window. I saw the old lady in the house across the street saying something. At first, I didn't understand, but then I did. She said, "If you see a red balloon glowing, run and never look back." I didn't know why, but it sent shivers down my spine. I started to close the curtain. Then, I noticed something strange on her neck—black lines that looked like stitches. I screamed when I realized her head had been stitched together. But she just smiled and whispered, "Remember! What I said."
 ## The Glowing Balloon ##
