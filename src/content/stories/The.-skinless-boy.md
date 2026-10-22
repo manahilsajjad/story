@@ -3,7 +3,7 @@ title: "The skinless boy"
 date: 2026-10-21
 genre: "Horror"
 emoji: "💀"
-summary: "Ellias moves to a mysterious town where nothing is normal, his nightmare just began"
+summary: "Ellias moves to a mysterious town where nothing is normal, his nightmare just began."
 ---
 ## Welcome to town ##
 It was a cold and stormy night when I moved to the small town. I knew immediately that something was wrong with the place. Not just strange wrong.
