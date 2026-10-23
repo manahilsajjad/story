@@ -3,7 +3,7 @@ title: "Den mystiske besked"
 date: 2026-10-23
 genre: "Emotional"
 emoji: "✉️"
-summary: "En dag for Violet en mystisk besked, men der hun læser beskeden styrter hendes verden fra hinanden. 
+summary: "En dag for Violet en mystisk besked, men der hun læser beskeden styrter hendes verden fra hinanden."
 ---
 
 Det var en helt normal dag efter skole. Eller det troede jeg, fordi der jeg så på mit skrivebord lå et foldet stykke papir. Der jeg foldede det ud stod der på papiret:”Mød mig kl 20.00 ved din søsters krav, du må ikke sige det til nogen.” Jeg læste det 2 gange for at være sikker på hvad der stod. Min søster er jo ikke død, hun er i Aarhus for at studere. Og hun ringede til mig eller hun plejede at gøre det.
