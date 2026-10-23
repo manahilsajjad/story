@@ -23,6 +23,5 @@ Then the skinless boy stepped toward me and touched my shoulder. A red balloon h
 ## The Note ##
 When I opened my eyes again, everything was gone. The basement was empty. The toys stood motionless. Dad was cooking in the kitchen. But when I looked at the kitchen counter, there was a note that read: *I’ll be back, Ellias.* I wondered how the skinless boy knew my name. I had never told him. But I just tried to forget it all, and I succeeded. After that, everything went back to normal. I went to school, ate my meals, and played with my friends.
 But on some nights, I still think I can hear a faint *THUD* outside the window.
-Leave a blank line between paragraphs.
 
 
