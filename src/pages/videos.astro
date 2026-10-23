@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// HOW TO ADD A VIDEO: add one line to this list, then commit.
+//   YouTube:  { title: 'My video', description: 'Short text', youtube: 'dQw4w9WgXcQ' }   (the part after v= in the link)
+//   A file:   { title: 'My video', description: 'Short text', file: 'my-video.mp4' }      (put the file in the public/videos folder)
+// Keep files small (GitHub Pages is not made for big videos); YouTube is better for long ones.
+const videos: { title: string; description?: string; youtube?: string; file?: string }[] = [
+  // { title: 'Example', description: 'Replace me', youtube: 'dQw4w9WgXcQ' },
+];
+
+// only accept a plain YouTube id / plain file name, never a free-form URL
+const safe = videos.filter((v) => (v.youtube && /^[\w-]{11}$/.test(v.youtube)) || (v.file && /^[\w.-]+\.(mp4|webm)$/.test(v.file)));
+---
+<Layout title="Videos · My Stories" description="Videos from My Stories.">
+  <a class="back" href={`${base}/`}>← Back to stories</a>
+  <h1>🎬 Videos</h1>
+
+  {safe.length === 0 && <p class="soon">🌱 Videos are coming soon.</p>}
+
+  <div class="vgrid">
+    {safe.map((v) => (
+      <figure class="vcard">
+        {v.youtube ? (
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${v.youtube}`}
+            title={v.title}
+            loading="lazy"
+            allow="encrypted-media; picture-in-picture"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        ) : (
+          <video controls preload="metadata" src={`${base}/videos/${v.file}`}></video>
+        )}
+        <figcaption>
+          <h3>{v.title}</h3>
+          {v.description && <p>{v.description}</p>}
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+
+  <style>
+    .back { display: inline-block; margin: .5rem 0 1rem; color: var(--accent); text-decoration: none; font-weight: 700; }
+    h1 { color: var(--accent); margin-top: 0; }
+    .soon { background: var(--accent-soft); border-radius: 12px; padding: .8rem 1rem; font-weight: 700; max-width: 700px; }
+    .vgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .vcard { margin: 0; background: var(--card); border: 1px solid var(--border); border-radius: 18px; overflow: hidden; }
+    .vcard iframe, .vcard video { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
+    figcaption { padding: .8rem 1rem 1rem; }
+    figcaption h3 { margin: 0 0 .3rem; }
+    figcaption p { margin: 0; color: var(--muted); }
+  </style>
+</Layout>
